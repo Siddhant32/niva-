@@ -5,8 +5,7 @@ import ClientLayout from '../components/ClientLayout'
 
 export const metadata: Metadata = {
   title: 'Niva – Your Personal Health Copilot',
-  description: 'Understand, organize, and manage your healthcare journey with Niva.',
-  generator: 'v0.app',
+  description: 'Understand, organize, and manage your healthcare journey with AI.',
   icons: {
     icon: [
       { url: '/icon-light-32x32.png', media: '(prefers-color-scheme: light)' },
@@ -21,7 +20,7 @@ export const viewport: Viewport = {
   colorScheme: 'light dark',
   themeColor: [
     { media: '(prefers-color-scheme: light)', color: 'white' },
-    { media: '(prefers-color-scheme: dark)', color: 'black' },
+    { media: '(prefers-color-scheme: dark)', color: '#080d14' },
   ],
 }
 
@@ -29,9 +28,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en" suppressHydrationWarning>
       <body className="antialiased">
-        <ClientLayout>
-          {children}
-        </ClientLayout>
+        <ClientLayout>{children}</ClientLayout>
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>
